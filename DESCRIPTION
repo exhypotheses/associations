@@ -1,0 +1,9 @@
+Package: dependencies
+Type: Package
+Title: What the package does (short line)
+Version: 1.0
+Date: 2021-07-19
+Author: greyhypotheses
+Maintainer: greyhypotheses @
+Description: This package is focused on data dependency statistics for data studies or projects.
+License: Pending
