@@ -3,17 +3,17 @@
 # Created by: greyhypotheses
 # Created on:
 
-isdependentNC <- function(attributes, label, frame) {
+IsDependentNC <- function(variables, target, frame) {
   #' Returns a table of test statistic, p, & Cramér's V values
   #'
-  #' @param attributes: The list of categorical fields
-  #' @param label: The name of the target field
+  #' @param variables: The list of categorical fields
+  #' @param target: The target field
   #' @param frame: The table of data
   
   estimates <- data.table()
-  for (attribute in attributes) {
-    test <- kruskal.test(x = frame[[attribute]], g = frame[[label]])
-    estimates <- rbind(estimates, data.table(field = attribute, pvalue = test$p.value))
+  for (variable in variables) {
+    test <- kruskal.test(x = frame[[variable]], g = frame[[target]])
+    estimates <- rbind(estimates, data.table(field = variable, pvalue = test$p.value))
   }
   
   return(estimates)
