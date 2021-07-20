@@ -4,9 +4,9 @@
 # Created on:
 
 # Functions
-source("R/functions/packages.R")
-source("R/functions/isdependentCC.R")
-source('R/functions/isdependentNC.R')
+source("functions/ImportPackages.R")
+source("functions/IsDependentCC.R")
+source('functions/IsDependentNC.R')
 
 # Ensure that the required packages are available
 packages()
