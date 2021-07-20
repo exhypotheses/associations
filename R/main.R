@@ -5,14 +5,14 @@
 
 main <- function () {
 
-  # Functions
+  # Ensure that the required packages are available
   source("R/functions/ImportPackages.R")
+  ImportPackages()
+
+  # Functions
   source("R/functions/IsDependentCC.R")
   source("R/functions/IsDependentNC.R")
   source("R/functions/ExportData.R")
-
-  # Ensure that the required packages are available
-  packages()
 
   # Libraries
   library(jsonlite)
