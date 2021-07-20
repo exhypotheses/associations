@@ -3,7 +3,7 @@
 # Created by: greyhypotheses
 # Created on:
 
-packages <- function(){
+ImportPackages <- function(){
   #' Imports packages
   #'
   
