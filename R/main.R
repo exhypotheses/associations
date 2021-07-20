@@ -1,3 +1,8 @@
+# Title: Dependency Analysis
+# Objective: Dependency Analysis
+# Created by: greyhypotheses
+# Created on:
+
 # Functions
 source("R/functions/packages.R")
 source("R/functions/isdependentCC.R")
