@@ -1,4 +1,11 @@
+# Title: Import Packages
+# Objective: Imports packages
+# Created by: greyhypotheses
+# Created on:
+
 packages <- function(){
+  #' Imports packages
+  #'
   
   # List of packages
   packages <- c("ggplot2", "plotly", "data.table", "rcompanion", "conover.test")
