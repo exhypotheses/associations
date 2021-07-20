@@ -3,18 +3,18 @@
 # Created by: greyhypotheses
 # Created on:
 
-isdependentCC <- function(attributes, label, frame){
+IsDependentCC <- function(variables, target, frame){
   #' Returns a table of test statistic, p, & Cramér's V values
   #'
-  #' @param attributes: The list of categorical fields
-  #' @param label: The name of the target field
+  #' @param variables: The list of categorical fields
+  #' @param target: The target field
   #' @param frame: The table of data
   
   estimates <- data.table()
-  for (attribute in attributes) {
+  for (variable in variables) {
     
-    writeLines(paste0('\n\nCase: ', attribute))
-    frequencies <- table(frame[[attribute]], frame[[label]])
+    writeLines(paste0('\n\nCase: ', variable))
+    frequencies <- table(frame[[variable]], frame[[target]])
     print(frequencies)
 
     # In relation to a categrical field in question, is the classification of an instance independent of the
@@ -27,7 +27,7 @@ isdependentCC <- function(attributes, label, frame){
                                   R = 1000, histogram = FALSE, digits = 4, bias.correct = TRUE)
 
     # Add the estimates to the table of estimates
-    calculations <- data.table(field = attribute, chi_squared_statistic = chisquared$statistic,
+    calculations <- data.table(field = variable, chi_squared_statistic = chisquared$statistic,
                                pvalue = chisquared$p.value, cramerv = cramercinq)
     estimates <- rbind(estimates, calculations)
   }
