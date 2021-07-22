@@ -58,5 +58,4 @@ main <- function () {
   mapply(ExportData, x = list(c_categorical, n_categorical), file_name = list('categorical.csv', 'numerical.csv'), pathstr =
     pathstr)
 
-
 }
