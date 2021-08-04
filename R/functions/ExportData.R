@@ -11,6 +11,7 @@ ExportData <- function (x, file_name, pathstr) {
   #' @param pathstr The path to file_name
 
   # Write/Save
-  data.table::fwrite(x = x, file = file.path(pathstr, file_name), row.names = FALSE, col.names = TRUE)
+  data.table::fwrite(x = x, file = file.path(pathstr, paste0(file_name, '.csv')), row.names = FALSE, col.names = TRUE)
+  jsonlite::write_json(x = x, path = file.path(pathstr, paste0(file_name, '.json')))
 
 }
