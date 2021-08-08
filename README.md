@@ -68,3 +68,8 @@ Whereas, the structure of the dictionary of polytomous categorical fields is:
 * Run R CMD check to check the package tarball.
 
 Read "Writing R Extensions" for more information.
+
+<br>
+<br>
+<br>
+<br>
