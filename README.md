@@ -1,10 +1,7 @@
 <br>
 
-## Dependencies
-
-**Focus**: This repository explores, considers, a variety of dependency statistics for data science, machine learning, studies 
-focused on 
-classification problems.  More notes upcoming.
+**Focus**: This repository explores _strength of association statistics_ for data science, machine learning, etc., questions 
+focused on classification.  More notes upcoming.
 
 <br>
 
@@ -12,9 +9,9 @@ classification problems.  More notes upcoming.
 
 Most probably an input YAML that includes:
 * The URL of a CSV data file whose fields will be assessed.
-* The R data type of each field in the CSV file..
-* The URL of a JSON file that outlines the characteristics of the CSV file data fields; the structure of the JSON file is 
-  outlined below.
+* The R data type of each field in the CSV file.
+* The URL of a JSON file that outlines the characteristics of the CSV file data fields; more details 
+  within section [The Structure of the JSON File](#the-structure-of-the-json-file).
 
 <br>
 
