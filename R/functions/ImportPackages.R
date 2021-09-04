@@ -8,7 +8,7 @@ ImportPackages <- function(){
   #'
   
   # List of packages
-  packages <- c("ggplot2", "plotly", "data.table", "rcompanion", "conover.test")
+  packages <- c("ggplot2", "plotly", "data.table", "rcompanion", "conover.test", "GDAtools")
   
   # Prepare
   prepare <- function(x){
