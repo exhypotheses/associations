@@ -9,6 +9,13 @@ main <- function () {
   source("R/functions/ImportPackages.R")
   ImportPackages()
   
+  
+  # Libraries
+  library(GDAtools)
+  library(jsonlite)
+  library(httr)
+  library(rcompanion)
+  
 
   # Functions
   source("R/functions/IsDependentCC.R")
@@ -16,19 +23,11 @@ main <- function () {
   source("R/functions/ExportData.R")
   
 
-  # Libraries
-  library(jsonlite)
-  library(httr)
-  library(rcompanion)
-  
-
   # These will be the YAML file entities
-  classes <- c("integer", "integer", "integer", "integer", "integer", "integer", 
-               "integer", "factor", "factor", "factor", "factor", "factor", "factor", 
-               "factor", "factor", "factor", "factor", "factor", "factor", "factor", 
-               "factor", "factor")
-  dataurl <- 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline.csv'
-  propertiesurl <- 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/fields.json'
+  classes <- c("e_chq_acc_status" = "factor", "duration_months" = "integer", "credit_history" = "factor", "purpose" = "factor", "credit_amount" = "integer", "savings_acc_class" = "factor", "curr_emp_class" = "factor", "i_rate_by_disp_inc" = "integer", "sex_and_status" = "factor", "other_debtors_class" = "factor", "curr_res_since" = "integer", "property" = "factor", "age_years" = "integer", "other_i_plans" = "factor", "housing" = "factor", "n_e_credits_this_bank" = "integer", "job" = "factor", "n_dependants" = "integer", "telephone" = "factor", "foreign_worker" = "factor", "female" = "factor", "acceptable" = "factor")
+  
+  dataurl <- 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline/data.csv'
+  propertiesurl <- 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline/properties.json'
 
   
   # Data
@@ -42,12 +41,10 @@ main <- function () {
   fields <- jsonlite::fromJSON(txt = content(request, as = 'text', encoding = 'UTF-8'), simplifyVector = TRUE)
 
   
-  # The fields w.r.t. the data set in focus (ref. the data URL)
-  indices <- seq(fields$source)
-  index <- indices[fields$source == basename(dataurl)]
-  categorical_ <- fields$properties$categoricalFields[[index]]
-  numeric_ <- fields$properties$numeric[[index]]
-  target_ <- fields$properties$target[[index]]
+  # The fields w.r.t. the data set in focus
+  categorical_ <- fields$categoricalFields
+  numeric_ <- fields$numeric
+  target_ <- fields$target
 
   
   # The degree of dependence between target & categorical variables
